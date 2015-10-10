@@ -411,6 +411,7 @@ void Widget::showTables()
         query.exec("select name from sqlite_master");   //查询表名
         while(query.next())                             //每个表
         {
+            qDebug() << "\ntable_name: " << query.value(0).toString();
             tableWidget = new QTableWidget(textBrowser);
             QSqlQuery queryColumn(db);
             int tableColumnCount = 0;
